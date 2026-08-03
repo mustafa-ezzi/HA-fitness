@@ -1,6 +1,6 @@
-"""SQLite-friendly helpers for additive schema changes."""
+"""Additive schema helpers that work on SQLite and PostgreSQL."""
 
-from sqlalchemy import text
+from sqlalchemy import inspect, text
 
 from app.database import engine
 
@@ -17,11 +17,12 @@ MEMBER_COLUMNS = {
 
 
 def ensure_schema() -> None:
+    inspector = inspect(engine)
+    if "members" not in inspector.get_table_names():
+        return
+
+    existing = {col["name"] for col in inspector.get_columns("members")}
     with engine.begin() as conn:
-        rows = conn.execute(text("PRAGMA table_info(members)")).fetchall()
-        if not rows:
-            return
-        existing = {row[1] for row in rows}
         for column, sql_type in MEMBER_COLUMNS.items():
             if column not in existing:
                 conn.execute(text(f"ALTER TABLE members ADD COLUMN {column} {sql_type}"))
