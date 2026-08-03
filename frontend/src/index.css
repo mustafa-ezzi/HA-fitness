@@ -16,8 +16,7 @@
   --radius: 8px;
   --sidebar-width: 232px;
   --footbar-height: 64px;
-  --font-display: "Syne", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
 }
 
 *,
@@ -34,7 +33,9 @@ body,
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
   color: var(--text);
   background: var(--purple-50);
   -webkit-font-smoothing: antialiased;
@@ -55,8 +56,10 @@ a {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
+  font-weight: 600;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .btn {
@@ -149,7 +152,7 @@ h3 {
 
 .page-title {
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text);
   margin-bottom: 0.25rem;
 }
@@ -213,10 +216,10 @@ h3 {
 }
 
 .sidebar-brand {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: 0.01em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0;
   padding: 0.35rem 0.7rem 1.15rem;
 }
 
@@ -438,9 +441,9 @@ h3 {
 }
 
 .login-brand {
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--text);
   margin-bottom: 0.2rem;
 }
@@ -513,8 +516,9 @@ h3 {
 
 .stat-value {
   color: var(--purple-900);
-  font-family: var(--font-display);
-  font-size: 2rem;
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -540,21 +544,12 @@ h3 {
 
 .empty-state strong {
   color: var(--purple-900);
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 .settings-logout {
   margin-top: 1.25rem;
-}
-
-.settings-warning {
-  margin: 1rem 0 0;
-  border: 1px solid #f4d9a7;
-  border-radius: 10px;
-  padding: 0.75rem 0.9rem;
-  background: #fff9e8;
-  color: #7a5500;
-  font-size: 0.88rem;
 }
 
 .placeholder-tile {
@@ -579,7 +574,8 @@ a.placeholder-tile:hover {
   display: block;
   color: var(--purple-900);
   margin-bottom: 0.35rem;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 .page-header {
@@ -693,14 +689,15 @@ a.placeholder-tile:hover {
 }
 
 .package-name {
-  font-size: 1.05rem;
-  color: var(--purple-900);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .package-price {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--text);
 }
 
@@ -748,8 +745,9 @@ a.placeholder-tile:hover {
 }
 
 .modal-title {
-  font-size: 1.15rem;
-  color: var(--purple-900);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .modal-close {
@@ -942,8 +940,9 @@ a.placeholder-tile:hover {
 }
 
 .section-title {
-  font-size: 1rem;
-  color: var(--purple-900);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
   margin-bottom: 0.85rem;
 }
 

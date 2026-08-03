@@ -47,7 +47,7 @@ export function SettingsPage() {
   return (
     <div>
       <h1 className="page-title">Settings</h1>
-      <p className="page-subtitle">Account and system information.</p>
+      <p className="page-subtitle">Account and system status.</p>
 
       <div className="detail-grid">
         <section className="card">
@@ -79,7 +79,15 @@ export function SettingsPage() {
             <div>
               <dt>API</dt>
               <dd>
-                <span className={`badge ${status.api === 'online' ? 'badge-pay-paid' : status.api === 'offline' ? 'badge-pay-unpaid' : 'badge-muted'}`}>
+                <span
+                  className={`badge ${
+                    status.api === 'online'
+                      ? 'badge-pay-paid'
+                      : status.api === 'offline'
+                        ? 'badge-pay-unpaid'
+                        : 'badge-muted'
+                  }`}
+                >
                   {status.api}
                 </span>
               </dd>
@@ -97,27 +105,6 @@ export function SettingsPage() {
               <dd>{status.trainers ?? '—'}</dd>
             </div>
           </dl>
-        </section>
-
-        <section className="card form-span-2">
-          <h2 className="section-title">Application</h2>
-          <dl className="detail-list">
-            <div>
-              <dt>Name</dt>
-              <dd>HA Fitness Management</dd>
-            </div>
-            <div>
-              <dt>Theme</dt>
-              <dd>Dark purple & white</dd>
-            </div>
-            <div>
-              <dt>Database</dt>
-              <dd>SQLite (local)</dd>
-            </div>
-          </dl>
-          <p className="settings-warning">
-            For production use, change the default admin password and configure a private secret key.
-          </p>
         </section>
       </div>
     </div>
